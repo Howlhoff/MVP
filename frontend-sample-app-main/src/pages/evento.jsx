@@ -5,8 +5,12 @@ import NavBar from '../components/nav_bar'
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
+import DatePicker from "react-datepicker";
+import { registerLocale, setDefaultLocale } from  "react-datepicker";
+import es from 'date-fns/locale/es';
+import "react-datepicker/dist/react-datepicker.css";
 
-
+registerLocale('es', es)
 
 export const Evento = () => {
   const [inputFields, setInputFields] = useState([
@@ -21,22 +25,18 @@ export const Evento = () => {
 
   const handleRemoveFields = index => {
     const values = [...inputFields];
-    values.splice(index, 1);
+    values.splice(index, 5);
     setInputFields(values);
   };
 
-  const addFields = () => {
-    let newfield = { Necesidad : '' }
+  const [date, setDate] = useState(new Date());
 
-    setInputFields([...inputFields, newfield])
-
-  }
   return (
     <div className='page'>
       <NavBar />
       <h2>Crear nuevo evento</h2>
       <Form>
-        <Form.Group as={Row} className="mb-3" controlId="formPlaintext">
+        <Form.Group as={Row} className="mb-3" controlId="formPlaintext1">
           <Form.Label column sm="2">
             Nombre evento
           </Form.Label>
@@ -44,7 +44,7 @@ export const Evento = () => {
             <Form.Control type="text" />
           </Col>
         </Form.Group>
-        <Form.Group as={Row} className="mb-3" controlId="formPlaintext">
+        <Form.Group as={Row} className="mb-3" controlId="formPlaintext2">
         <Form.Label column sm="2">
           Lugar
         </Form.Label>
@@ -52,15 +52,21 @@ export const Evento = () => {
           <Form.Control type="text"  />
         </Col>
       </Form.Group>
-      <Form.Group as={Row} className="mb-3" controlId="formPlaintext">
+      <Form.Group as={Row} className="mb-3" controlId="formPlaintext3">
         <Form.Label column sm="2">
           Fecha
         </Form.Label>
         <Col sm="5">
-          <Form.Control type="text"  />
+              <Form.Control
+                type="date"
+                name="duedate"
+                placeholder="Due date"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+              />
         </Col>
       </Form.Group>
-      <Form.Group as={Row} className="mb-3" controlId="formPlaintext">
+      <Form.Group as={Row} className="mb-3" controlId="formPlaintext4">
         <Form.Label column sm="2">
           Necesidad
         </Form.Label>
@@ -78,12 +84,10 @@ export const Evento = () => {
                 <Col sm="5">
                   <Form.Control type="text"  />
                 </Col>
+                <Col sm ="5">
+                <Button onClick={() => handleRemoveFields(index)} variant='danger'>Remover necesidad</Button>
+                </Col>
               </Form.Group>
-              </div>
-              <div className="form-group">
-              <Button onClick={() => handleRemoveFields(index)} variant='danger'>Remover necesidad</Button>
-              <br />
-              <br />   
               </div>
             </Fragment>
           ))}
