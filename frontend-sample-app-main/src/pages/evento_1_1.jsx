@@ -4,8 +4,9 @@ import NavBar from '../components/nav_bar'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Form from 'react-bootstrap/Form';
 
-export const Activos = () => {
+export const Activos11 = () => {
   return (
     <div className='page'>
       <NavBar />
@@ -13,7 +14,7 @@ export const Activos = () => {
       <h2>Página Interna</h2>
         <Row md={6}>
             <Col> <h5>Incendio forestal</h5>  </Col>
-            <Col><Button variant="primary" href='/activadaso'> Confirmar </Button></Col>
+            <Col><Button variant="secondary" disabled> Confirmado </Button></Col>
         </Row>
         <Row>
             <Col xs={4}>Lugar de ubicacion</Col>
@@ -30,12 +31,10 @@ export const Activos = () => {
         <Row>
             <Col xs={1}>Necesidades</Col>
         </Row>
-        <Row>
-            <Col xs={6}>- Remover escombros</Col>
-        </Row>
-        <Row>
-            <Col xs={6}>- Crear cortafuego</Col>
-        </Row>
+        <Form>
+            <Form.Check label="Remover escombros"/>
+            <Form.Check label="Crear cortafuegos"/>
+        </Form>
         <Row>
             <Col><Button variant='primary' href='/'>Volver </Button></Col>
         </Row>
@@ -45,4 +44,4 @@ export const Activos = () => {
   )
 }
 
-export default Activos
+export default Activos11

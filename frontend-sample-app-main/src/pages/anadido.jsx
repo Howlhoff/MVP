@@ -41,7 +41,7 @@ export const Activos2 = () => {
         </Row>
         <Row md={6}>
             <Col> <h5>Incendio forestal</h5>  </Col>
-            <Col><Button variant="primary"> Confirmar </Button></Col>
+            <Col><Button variant="primary" href='confirmacion'> Confirmar </Button></Col>
         </Row>
         <Row>
             <Col xs={4}>Lugar de ubicacion</Col>

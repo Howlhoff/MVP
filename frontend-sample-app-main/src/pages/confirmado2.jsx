@@ -6,7 +6,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 
-export const Confirmado = () => {
+export const Confirmado2 = () => {
   return (
     <div className='page'>
       <NavBar />
@@ -39,7 +39,7 @@ export const Confirmado = () => {
         <Row><br /></Row>
         <Row md={6}>
             <Col> <h5>Incendio forestal</h5>  </Col>
-            <Col><Button variant="primary" href='/confirmo'> Confirmar </Button></Col>
+            <Col><Button variant="secondary" disabled> Confirmado </Button></Col>
         </Row>
         <Row>
             <Col xs={4}>Lugar de ubicacion</Col>
@@ -56,12 +56,10 @@ export const Confirmado = () => {
         <Row>
             <Col xs={1}>Necesidades</Col>
         </Row>
-        <Row>
-            <Col xs={6}>- Remover escombros</Col>
-        </Row>
-        <Row>
-            <Col xs={6}>- Crear cortafuego</Col>
-        </Row>
+        <Form>
+            <Form.Check label="Remover escombros"/>
+            <Form.Check label="Crear cortafuegos"/>
+        </Form>
         <Row>
             <Col><Button variant='primary' href='/'>Volver </Button></Col>
         </Row>
@@ -71,4 +69,4 @@ export const Confirmado = () => {
   )
 }
 
-export default Confirmado
+export default Confirmado2
