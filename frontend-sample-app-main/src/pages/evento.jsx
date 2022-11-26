@@ -74,7 +74,7 @@ export const Evento = () => {
                       aria-label="Necesidad"
                       aria-describedby="basic-addon2"
                     />
-                    <Button onClick={() => handleRemoveFields(index)} disabled={index === 0} variant='danger'><BsTrash /></Button>
+                    <Button onClick={() => handleRemoveFields(index)} disabled={index === 0} variant='danger' className='btn-trash'><BsTrash /></Button>
                   </InputGroup>
                 </Col>
               </Form.Group>

@@ -6,7 +6,7 @@ import Navbar from 'react-bootstrap/Navbar';
 
 export const NavBar = () => {
   return (
-      <Navbar bg="dark" variant="dark" className='ml-0'>
+      <Navbar>
         <Container fluid={true}>
           <Navbar.Brand href="/">Safeso</Navbar.Brand>
           <Nav className="me-auto">

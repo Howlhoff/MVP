@@ -16,6 +16,41 @@ html, body {
   margin-left: 20px;
 }
 
+.btn{
+  font-weight: bold;
+  background-color: #055160;
+  border-color: white;
+  color: white;
+}
+
+.btn:active,.btn:hover{
+  font-weight: bold;
+  background-color: white !important;
+  border-color: #055160;
+  color: #055160 !important;
+}
+
+.btn-trash{
+  background-color: #dc3545;
+  border-color: #dc3545;
+  color: white;
+}
+
+.navbar{
+  background-color: #055160;
+}
+
+.navbar a{
+  color: white;
+}
+
+.navbar a:active,.navbar a:hover,.navbar a:focus{
+  color: rgb(177, 177, 177) !important;
+}
+
+h2{
+  font-family: Arial, Helvetica, sans-serif;
+}
 
 * {
   font-family: 'Open Sans', sans-serif;
