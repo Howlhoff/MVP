@@ -19,7 +19,7 @@ export const Evento = () => {
 
   const handleRemoveFields = index => {
     const values = [...inputFields];
-    values.splice(index, 5);
+    values.splice(index, 1);
     setInputFields(values);
   };
 
@@ -60,14 +60,6 @@ export const Evento = () => {
               />
         </Col>
       </Form.Group>
-      <Form.Group as={Row} className="mb-3" controlId="formPlaintext4">
-        <Form.Label column sm="2">
-          Necesidad
-        </Form.Label>
-        <Col sm="5">
-          <Form.Control type="text"  />
-        </Col>
-      </Form.Group>
       {inputFields.map((inputField, index) => (
             <Fragment key={`${inputField}~${index}`}>
               <div className="form-group">
@@ -79,7 +71,7 @@ export const Evento = () => {
                   <Form.Control type="text"  />
                 </Col>
                 <Col sm ="5">
-                <Button onClick={() => handleRemoveFields(index)} variant='danger'>Remover necesidad</Button>
+                <Button onClick={() => handleRemoveFields(index)} disabled={index === 0} variant='danger'>Remover necesidad</Button>
                 </Col>
               </Form.Group>
               </div>
