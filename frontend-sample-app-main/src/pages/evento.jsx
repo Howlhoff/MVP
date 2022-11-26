@@ -5,6 +5,8 @@ import NavBar from '../components/nav_bar'
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
+import InputGroup from 'react-bootstrap/InputGroup';
+import { BsTrash } from "react-icons/bs"
 
 export const Evento = () => {
   const [inputFields, setInputFields] = useState([
@@ -28,17 +30,17 @@ export const Evento = () => {
   return (
     <div className='page'>
       <NavBar />
-      <h2>Crear nuevo evento</h2>
-      <Form>
-        <Form.Group as={Row} className="mb-3" controlId="formPlaintext1">
+      <h2 className='text-center mt-5'>Crear nuevo evento</h2>
+      <Form as={Row} className='mt-3 d-flex justify-content-center'>
+        <Form.Group className="mb-3 d-flex justify-content-center" controlId="formPlaintext1">
           <Form.Label column sm="2">
             Nombre evento
           </Form.Label>
-          <Col sm="5">
+          <Col className='d-flex justify-content-center' sm="5">
             <Form.Control type="text" />
           </Col>
         </Form.Group>
-        <Form.Group as={Row} className="mb-3" controlId="formPlaintext2">
+        <Form.Group className="mb-3 d-flex justify-content-center" controlId="formPlaintext2">
         <Form.Label column sm="2">
           Lugar
         </Form.Label>
@@ -46,7 +48,7 @@ export const Evento = () => {
           <Form.Control type="text"  />
         </Col>
       </Form.Group>
-      <Form.Group as={Row} className="mb-3" controlId="formPlaintext3">
+      <Form.Group className="mb-3 d-flex justify-content-center" controlId="formPlaintext3">
         <Form.Label column sm="2">
           Fecha
         </Form.Label>
@@ -62,29 +64,32 @@ export const Evento = () => {
       </Form.Group>
       {inputFields.map((inputField, index) => (
             <Fragment key={`${inputField}~${index}`}>
-              <div className="form-group">
-              <Form.Group as={Row} className="mb-3" controlId="formPlaintext">
+              <Form.Group className="mb-3 d-flex justify-content-center" controlId="formPlaintext3">
                 <Form.Label column sm="2">
                   Necesidad
                 </Form.Label>
                 <Col sm="5">
-                  <Form.Control type="text"  />
-                </Col>
-                <Col sm ="5">
-                <Button onClick={() => handleRemoveFields(index)} disabled={index === 0} variant='danger'>Remover necesidad</Button>
+                  <InputGroup controlId="formPlaintext">
+                    <Form.Control
+                      aria-label="Necesidad"
+                      aria-describedby="basic-addon2"
+                    />
+                    <Button onClick={() => handleRemoveFields(index)} disabled={index === 0} variant='danger'><BsTrash /></Button>
+                  </InputGroup>
                 </Col>
               </Form.Group>
-              </div>
             </Fragment>
           ))}
       </Form>
-      <Button onClick={() => handleAddFields()} variant='primary'>+ Añadir necesidad</Button> 
-      <br />
-      <br />
-      <Button variant='primary' href='/activado'>Confirmar evento </Button>
-      <br />
-      <br />
-      <Button variant='primary' href='/'> Volver </Button>
+        <div className='mt-3 col-12 d-flex justify-content-center'>
+          <Button  onClick={() => handleAddFields()} variant='primary'>+ Añadir necesidad</Button> 
+        </div>
+        <div className='mt-3 col-12 d-flex justify-content-center'>
+          <Button variant='primary' href='/activado'>Confirmar evento </Button>
+        </div>
+        <div className='mt-3 col-12 d-flex justify-content-center'>
+          <Button variant='primary' href='/'> Volver </Button>
+        </div>
     </div>
   )
 }

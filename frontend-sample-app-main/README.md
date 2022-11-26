@@ -14,6 +14,7 @@ Install dependences
 ```
 npm install
 npm install react-bootstrap bootstrap
+npm install react-icons
 ```
 
 Launch environment
