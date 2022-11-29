@@ -1,15 +1,13 @@
 # frontend-sample-app
-Basic Frontend Development Environment to start an app with Webpack
+Frontend Basico para el MVP del curso de DIU
 
-This repo includes `Webpack` to start an environment to build frontend views using `React`.
-
-### Requirements
+### Requisitos
 - Node >= 16.13.1
 - npm >= 8.1.2
 
-### Quick start
+### Inicio rapido
 
-Install dependences
+Instalar paquetes
 
 ```
 npm install
@@ -17,18 +15,14 @@ npm install react-bootstrap bootstrap
 npm install react-icons
 ```
 
-Launch environment
+Correr el entorno
 
 ```
 npm run dev
 ```
 
-Now you can open http://localhost:5050
+Abrir en un navegador el siguiente link http://localhost:5050
 
-### Packages included
-- [Webpack](https://webpack.js.org/)
-- [React Router](https://reactrouter.com/en/main)
-- [Material UI](https://mui.com/material-ui/getting-started/usage/)
+### Notas del dev
 
-### About stylesheets
-- Sample stylesheets were written using the [BEM](https://getbem.com/) structure
+- En esta entrega, solo participe yo, mis compañeros no pudieron ayudarme por motivos personales
